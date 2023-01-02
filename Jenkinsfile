@@ -12,22 +12,6 @@ pipeline {
     
     stages {
         
-        stage('permission1') {
-            steps {
-                sh '''
-                ls
-                hostname -I
-         
-                echo $Environment
-                echo $USER
-
-                cat permission.txt |grep -o $USER
-                echo $?
-                ls
-               '''
-            }
-        }
-        
         stage('Setup parameters') {
             steps {
 
@@ -85,7 +69,18 @@ pipeline {
     
         stage('permission') {
             steps {
-                echo 'Hello World'
+                
+              sh '''
+                ls
+                hostname -I
+         
+                echo $Environment
+                echo $USER
+
+                cat permission.txt |grep -o $USER
+                echo $?
+                ls
+               '''
             }
         }
         stage('cleaning') {
