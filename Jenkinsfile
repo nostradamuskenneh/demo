@@ -18,6 +18,8 @@ pipeline {
                 sh '''
                 
                 rm -rf check.sh
+                echo $environment
+                echo $USER
                 cat <<EOF > check.sh  
                 #!/bin/bash
                 cat permission.txt |grep -i $USER
@@ -29,7 +31,8 @@ pipeline {
                 exit 1
                 fi
                 EOF
-                  
+                bash check.sh
+                
                    
                 '''
             }
