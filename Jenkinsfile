@@ -136,7 +136,7 @@ pipeline {
                 pwd
                 ls
                 cat checkout.sh
-                echo $environment
+                echo $Environment
                 '''
             }
         }
