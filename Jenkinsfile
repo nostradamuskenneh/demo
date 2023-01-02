@@ -28,7 +28,7 @@ pipeline {
                            exit 1
                            fi
                           EOF
-                            bash check.sh
+                          bash check.sh
                             pwd
                             ls
                   
