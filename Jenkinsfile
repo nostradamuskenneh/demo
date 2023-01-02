@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh '''
                 
-                rm -rf checkout.sh
+        
                 echo $Environment
                 echo $USER
 
@@ -125,10 +125,10 @@ pipeline {
                 echo 'Hello World'
                 ls
                 uname -r
-                bash -x checkout.sh
+              
                 pwd
                 ls
-                cat checkout.sh
+           
                 echo $Environment
                 '''
             }
