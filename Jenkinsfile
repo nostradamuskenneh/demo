@@ -135,7 +135,8 @@ pipeline {
                 echo 'Hello World'
                 ls
                 uname -r
-                cat <<EOF > check.sh
+                cat check.sh
+                echo $environment
                 '''
             }
         }
