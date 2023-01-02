@@ -20,17 +20,17 @@ pipeline {
                 rm -rf checkout.sh
                 echo $Environment
                 echo $USER
-                cat <<EOF > checkout.sh  
-                #!/bin/bash
+               // cat <<EOF > checkout.sh  
+                //#!/bin/bash
                 cat permission.txt |grep -o $USER
-                if [[ $? -eq 0 ]]
-                then 
-                echo "you have permission to run this job"
-                else
-                echo "you don't have permission to run this job"
-                exit 1
-                fi
-                EOF
+               // if [[ $? -eq 0 ]]
+               // then 
+               // echo "you have permission to run this job"
+              //  else
+              //  echo "you don't have permission to run this job"
+               // exit 1
+               // fi
+               // EOF
                 ls
                 '''
             }
