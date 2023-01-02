@@ -2,8 +2,7 @@ pipeline {
     agent {
                 label ("node1 || node2 || node3 || node4")
             }
-    options {
-    //timeout(time: 1, unit: 'HOURS') 
+    options { 
     
     buildDiscarder(logRotator(numToKeepStr: '2'))
     disableConcurrentBuilds()
@@ -16,8 +15,7 @@ pipeline {
         stage('permission') {
             steps {
                 sh '''
-                
-        
+         
                 echo $Environment
                 echo $USER
 
@@ -124,7 +122,6 @@ pipeline {
                 echo 'Hello World'
                 ls
                 uname -r
-              
                 pwd
                 ls
          
