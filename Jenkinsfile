@@ -18,7 +18,7 @@ pipeline {
                 sh '''
                 
                 rm -rf check.sh
-                cat <<EOF > check.  
+                cat <<EOF > check.sh  
                 #!/bin/bash
                 USER=${User}
                 cat permission.txt |grep -i $User
