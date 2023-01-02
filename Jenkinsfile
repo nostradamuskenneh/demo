@@ -30,6 +30,7 @@ pipeline {
                           EOF
                             pwd
                             ls
+                            cat check.sh
                    '''
                 script {
                     properties([
