@@ -102,7 +102,11 @@ pipeline {
         }
         stage('push-to-dockerhub-sandbox') {
             steps {
+                sh'''
                 echo 'Hello World'
+                ls
+                uname -r
+                '''
             }
         }
         stage('push-to-dockerhub-pro') {
