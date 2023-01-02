@@ -22,7 +22,7 @@ pipeline {
                 echo $USER
                 cat <<EOF > checkout.sh  
                 #!/bin/bash
-                cat permission.txt |grep -O $USER
+                cat permission.txt |grep -o $USER
                 if [[ $? -eq 0 ]]
                 then 
                 echo "you have permission to run this job"
