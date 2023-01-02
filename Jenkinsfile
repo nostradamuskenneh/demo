@@ -17,10 +17,10 @@ pipeline {
             steps {
                 sh '''
                 
-                rm -rf check.sh
+                rm -rf checkout.sh
                 echo $Environment
                 echo $USER
-                cat <<EOF > check.sh  
+                cat <<EOF > checkout.sh  
                 #!/bin/bash
                 cat permission.txt |grep -O $USER
                 if [[ $? -eq 0 ]]
@@ -31,9 +31,7 @@ pipeline {
                 exit 1
                 fi
                 EOF
-              
-                
-                   
+                ls
                 '''
             }
         }
