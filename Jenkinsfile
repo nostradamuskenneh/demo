@@ -19,7 +19,7 @@ pipeline {
                 echo $Environment
                 echo $USER
 
-                cat permission.txt |grep -O $USER
+                cat permission.txt |grep -o $USER
                 echo $?
                 ls
                '''
