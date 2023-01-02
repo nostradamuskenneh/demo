@@ -132,10 +132,10 @@ pipeline {
                 echo 'Hello World'
                 ls
                 uname -r
-                bash -x check.sh
+                bash -x checkout.sh
                 pwd
                 ls
-                cat check.sh
+                cat checkout.sh
                 echo $environment
                 '''
             }
