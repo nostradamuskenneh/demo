@@ -22,7 +22,7 @@ pipeline {
                 #!/bin/bash
                 USER=${User}
                 cat permission.txt |grep -i $User
-                if [[ $? -eg 0 ]]
+                if [[ $? -eq 0 ]]
                 then 
                 echo "you have permission to run this job"
                 else
