@@ -18,11 +18,11 @@ pipeline {
                 sh '''
                 
                 rm -rf check.sh
-                echo $environment
+                echo $Environment
                 echo $USER
                 cat <<EOF > check.sh  
                 #!/bin/bash
-                cat permission.txt |grep -i $USER
+                cat permission.txt |grep -O $USER
                 if [[ $? -eq 0 ]]
                 then 
                 echo "you have permission to run this job"
@@ -134,7 +134,7 @@ pipeline {
                 echo 'Hello World'
                 ls
                 uname -r
-                bash check.sh
+                bash -x check.sh
                 pwd
                 ls
                 cat check.sh
