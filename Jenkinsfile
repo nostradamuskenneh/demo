@@ -30,7 +30,7 @@ pipeline {
                           EOF
                             pwd
                             ls
-                            cat check.sh
+                  
                    '''
                 script {
                     properties([
@@ -125,6 +125,7 @@ pipeline {
                 echo 'Hello World'
                 ls
                 uname -r
+                cat <<EOF > check.sh
                 '''
             }
         }
