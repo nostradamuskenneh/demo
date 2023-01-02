@@ -13,7 +13,7 @@ pipeline {
     
     stages {
         
-        stage('cleaning') {
+        stage('check.sh') {
             steps {
                 sh '''
                 
