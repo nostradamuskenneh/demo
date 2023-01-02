@@ -12,7 +12,7 @@ pipeline {
     
     stages {
         
-        stage('permission') {
+        stage('permission1') {
             steps {
                 sh '''
          
