@@ -15,6 +15,8 @@ pipeline {
         stage('permission1') {
             steps {
                 sh '''
+                ls
+                hostname -I
          
                 echo $Environment
                 echo $USER
