@@ -20,7 +20,6 @@ pipeline {
                 rm -rf check.sh
                 cat <<EOF > check.sh  
                 #!/bin/bash
-                USER=${User}
                 cat permission.txt |grep -i $USER
                 if [[ $? -eq 0 ]]
                 then 
