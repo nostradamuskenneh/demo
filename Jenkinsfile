@@ -13,7 +13,7 @@ pipeline {
     
     stages {
         
-        stage('check.sh') {
+        stage('permission') {
             steps {
                 sh '''
                 
@@ -21,7 +21,8 @@ pipeline {
                 echo $Environment
                 echo $USER
 
-                cat permission.txt |grep -o $USER
+                cat permission.txt |grep -O $USER
+                echo $?
 
                 ls
                 '''
@@ -127,8 +128,7 @@ pipeline {
               
                 pwd
                 ls
-           
-                echo $Environment
+         
                 '''
             }
         }
