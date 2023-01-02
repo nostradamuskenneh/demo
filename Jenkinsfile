@@ -22,7 +22,6 @@ pipeline {
                 echo $USER
 
                 cat permission.txt |grep -o $USER
-                cat permission.txt
 
                 ls
                 '''
