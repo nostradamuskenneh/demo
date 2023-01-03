@@ -144,16 +144,7 @@ pipeline {
                '''
             }
         }
-	stage('push to dockerhub') {
-            steps {
-               sh '''
-                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$UITag 
-                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$DBTag 
-                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$AUTHTag 
-                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$WEATHERTag
-               '''
-            }
-        }
+
 
         stage('push-to-dockerhub-dev') {
           when{
