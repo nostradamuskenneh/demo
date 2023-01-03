@@ -187,10 +187,10 @@ pipeline {
 	  }
             steps {
                sh '''
-                docker push oumarkenneh/oumarui:${BUILD_NUMBER}$UITag 
-                docker push oumarkenneh/oumardb:${BUILD_NUMBER}$DBTag 
-                docker push oumarkenneh/oumarauth:${BUILD_NUMBER}$AUTHTag 
-                docker push oumarkenneh/oumarweather:${BUILD_NUMBER}$WEATHERTag
+                docker push oumarkenneh/oumar-ui:${BUILD_NUMBER}$UITag 
+                docker push oumarkenneh/oumar-db:${BUILD_NUMBER}$DBTag 
+                docker push oumarkenneh/oumar-auth:${BUILD_NUMBER}$AUTHTag 
+                docker push oumarkenneh/oumar-weather:${BUILD_NUMBER}$WEATHERTag
                '''
             }
         }
