@@ -154,26 +154,7 @@ pipeline {
                '''
             }
         }
-        stage('build-sandbox') {
-          when{
-          expression {
-            env.Environment == 'sandbox' }
-            }
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('build-pro') {
-          when{ 
-          
-          expression {
-            env.Environment == 'Prod' }
-          
-            }
-            steps {
-                echo 'Hello World'
-            }
-        }
+
         stage('push-to-dockerhub-dev') {
           when{
             expression {
