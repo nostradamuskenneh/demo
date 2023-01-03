@@ -117,19 +117,19 @@ pipeline {
             steps {
                 sh '''
                                 cd UI
-                docker build -t oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$UITag .
+                docker build -t oumarkenneh/oumar-pipeline:${BUILD_NUMBER}$UITag .
                 cd -
 
                 cd DB
-                docker build -t oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$DBTag .
+                docker build -t oumarkenneh/oumar-pipeline:${BUILD_NUMBER}$DBTag .
                 cd -
 
                 cd auth
-                docker build -t oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$AUTHTag .
+                docker build -t oumarkenneh/oumar-pipeline:${BUILD_NUMBER}$AUTHTag .
                 cd -
 
                 cd weather
-                docker build -t oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$WEATHERTag .
+                docker build -t oumarkenneh/oumar-pipeline:${BUILD_NUMBER}$WEATHERTag .
                 cd -
                 ls 
                 pwd
