@@ -157,7 +157,7 @@ pipeline {
 
         stage('push-to-dockerhub-dev') {
           when{
-            expression {
+          expression {
               env.Environment == 'Dev' }
             }
             steps {
@@ -172,7 +172,7 @@ pipeline {
 
         stage('push-to-dockerhub-sandbox') {
           when{
-            expression {
+          expression {
               env.Environment == 'sandbox' }
             steps {
                sh '''
@@ -185,7 +185,7 @@ pipeline {
         }
         stage('push-to-dockerhub-pro') {
           when{
-            expression {
+          expression {
               env.Environment == 'Prod' }
             steps {
                sh '''
