@@ -144,12 +144,20 @@ pipeline {
                '''
             }
         }
+	stage('push to dockerhub') {
+            steps {
+               sh '''
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$UITag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$DBTag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$AUTHTag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$WEATHERTag
+               '''
+            }
+        }
         stage('build-sandbox') {
-          when{ 
-          
+          when{
           expression {
             env.Environment == 'sandbox' }
-          
             }
             steps {
                 echo 'Hello World'
@@ -167,25 +175,43 @@ pipeline {
             }
         }
         stage('push-to-dockerhub-dev') {
+          when{
+            expression {
+              env.Environment == 'Dev' }
+            }
             steps {
-                echo 'Hello World'
+               sh '''
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$UITag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$DBTag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$AUTHTag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$WEATHERTag
+               '''
             }
         }
         stage('push-to-dockerhub-sandbox') {
+          when{
+            expression {
+              env.Environment == 'sandbox' }
             steps {
-                sh'''
-                echo 'Hello World'
-                ls
-                uname -r
-                pwd
-                ls
-         
-                '''
+               sh '''
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$UITag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$DBTag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$AUTHTag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$WEATHERTag
+               '''
             }
         }
         stage('push-to-dockerhub-pro') {
+          when{
+            expression {
+              env.Environment == 'Prod' }
             steps {
-                echo 'Hello World'
+               sh '''
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$UITag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$DBTag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$AUTHTag 
+                docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$WEATHERTag
+               '''
             }
         }
         stage('update helm charts-dev') {
