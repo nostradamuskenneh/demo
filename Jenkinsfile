@@ -10,7 +10,7 @@ pipeline {
     timestamps()
     }
       environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('oumar-dockerhub-credential-ID')
 	}
     stages {
         
@@ -140,7 +140,7 @@ pipeline {
         stage('login to dockerhub') {
             steps {
                sh '''
-               sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u oumarkenneh --password-stdin'
+               echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u oumarkenneh --password-stdin
                '''
             }
         }
