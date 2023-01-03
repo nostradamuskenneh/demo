@@ -9,7 +9,9 @@ pipeline {
     timeout (time: 60, unit: 'MINUTES')
     timestamps()
     }
-    
+      environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
     stages {
         
         stage('Setup parameters') {
@@ -133,6 +135,13 @@ pipeline {
                 pwd
                 
                 '''
+            }
+        }
+        stage('login to dockerhub') {
+            steps {
+               sh '''
+               sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u oumarkenneh --password-stdin'
+               '''
             }
         }
         stage('build-sandbox') {
