@@ -107,7 +107,26 @@ pipeline {
         }
         stage('build-dev') {
             steps {
-                echo 'Hello World'
+                sh '''
+                                cd UI
+                docker build -t devopseasylearning2021/oumar-pipeline:${BUILD_NUMBER}-$UITag .
+                cd -
+
+                cd DB
+                docker build -t devopseasylearning2021/oumar-pipeline:${BUILD_NUMBER}-$DBTag .
+                cd -
+
+                cd auth
+                docker build -t devopseasylearning2021/oumar-pipeline:${BUILD_NUMBER}-$AUTHTag .
+                cd -
+
+                cd weather
+                docker build -t devopseasylearning2021/oumar-pipeline:${BUILD_NUMBER}-$WEATHERTag .
+                cd -
+                ls 
+                pwd
+                
+                '''
             }
         }
         stage('build-sandbox') {
