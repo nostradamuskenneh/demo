@@ -141,6 +141,7 @@ pipeline {
             steps {
                sh '''
                echo '$DOCKERHUB_CREDENTIALS_PSW | docker login -u oumarkenneh --password-stdin'
+	       oumarkenneh/tomcat-customization
                '''
             }
         }
