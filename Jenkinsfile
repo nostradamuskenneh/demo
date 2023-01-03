@@ -139,7 +139,7 @@ pipeline {
           when{ 
           
           expression {
-            env.Environment == 'SANDBOX' }
+            env.Environment == 'sandbox' }
           
             }
             steps {
@@ -150,7 +150,7 @@ pipeline {
           when{ 
           
           expression {
-            env.Environment == 'PROD' }
+            env.Environment == 'Prod' }
           
             }
             steps {
