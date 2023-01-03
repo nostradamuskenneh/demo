@@ -145,10 +145,29 @@ pipeline {
             }
         }
 
-
-        stage('push-to-dockerhub-dev') {
+        stage('build-sandbox') {
           when{
           expression {
+            env.Environment == 'sandbox' }
+            }
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('build-pro') {
+          when{ 
+          
+          expression {
+            env.Environment == 'Prod' }
+          
+            }
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('push-to-dockerhub-dev') {
+          when{
+            expression {
               env.Environment == 'Dev' }
             }
             steps {
@@ -160,10 +179,9 @@ pipeline {
                '''
             }
         }
-
         stage('push-to-dockerhub-sandbox') {
           when{
-          expression {
+            expression {
               env.Environment == 'sandbox' }
             steps {
                sh '''
@@ -176,7 +194,7 @@ pipeline {
         }
         stage('push-to-dockerhub-pro') {
           when{
-          expression {
+            expression {
               env.Environment == 'Prod' }
             steps {
                sh '''
