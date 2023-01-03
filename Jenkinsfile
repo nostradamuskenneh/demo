@@ -183,6 +183,7 @@ pipeline {
           when{
             expression {
               env.Environment == 'sandbox' }
+	  }
             steps {
                sh '''
                 docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$UITag 
@@ -196,6 +197,7 @@ pipeline {
           when{
             expression {
               env.Environment == 'Prod' }
+	  }
             steps {
                sh '''
                 docker push oumarkenneh/oumar-pipeline:${BUILD_NUMBER}-$UITag 
@@ -251,5 +253,5 @@ pipeline {
 }
 
 }
-}
-}
+
+
