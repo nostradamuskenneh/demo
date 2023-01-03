@@ -140,8 +140,8 @@ pipeline {
         stage('login to dockerhub') {
             steps {
                sh '''
-               echo '$DOCKERHUB_CREDENTIALS_PSW | docker login -u oumarkenneh --password-stdin'
-	       oumarkenneh/tomcat-customization
+               echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u oumarkenneh --password-stdin
+	       docker pull oumarkenneh/tomcat-customization
                '''
             }
         }
