@@ -106,6 +106,12 @@ pipeline {
             }
         }
         stage('build-dev') {
+          when{ 
+          
+          expression {
+            env.Environment == 'Dev' }
+          
+            }
             steps {
                 sh '''
                                 cd UI
@@ -130,11 +136,23 @@ pipeline {
             }
         }
         stage('build-sandbox') {
+          when{ 
+          
+          expression {
+            env.Environment == 'SANDBOX' }
+          
+            }
             steps {
                 echo 'Hello World'
             }
         }
         stage('build-pro') {
+          when{ 
+          
+          expression {
+            env.Environment == 'PROD' }
+          
+            }
             steps {
                 echo 'Hello World'
             }
