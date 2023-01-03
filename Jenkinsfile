@@ -170,7 +170,7 @@ pipeline {
             }
         }
 
-        stage('oh-push-to-dockerhub-sandbox') {
+        stage('push-to-dockerhub-sandbox') {
           when{
             expression {
               env.Environment == 'sandbox' }
