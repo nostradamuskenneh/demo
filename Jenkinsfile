@@ -90,17 +90,17 @@ pipeline {
                 echo 'Hello World'
             }
         }
-         stage('SonarQube analysis') {
-            agent {
-                docker {
-                  image 'sonarsource/sonar-scanner-cli:4.7.0'
-                }
-               }
-               environment {
-        CI = 'true'
+        // stage('SonarQube analysis') {
+          //  agent {
+           //     docker {
+            //      image 'sonarsource/sonar-scanner-cli:4.7.0'
+            //    }
+            //   }
+           //    environment {
+       // CI = 'true'
         //  scannerHome = tool 'Sonar'
-        scannerHome='/opt/sonar-scanner'
-    }
+       // scannerHome='/opt/sonar-scanner'
+   // }
             steps{
                 withSonarQubeEnv('Sonar') {
                     sh "${scannerHome}/bin/sonar-scanner"
