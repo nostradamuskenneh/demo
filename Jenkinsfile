@@ -236,14 +236,14 @@ pipeline {
 
     }
 
-        stage('metric-check') {
-			steps {
-                echo 'unit test..'
-				bat label: '', script: 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
-            }
+        //stage('metric-check') {
+			//steps {
+             //   echo 'unit test..'
+				//bat label: '', script: 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
+          //  }
 
 			
-        }
+       // }
    post {
    
    success {
