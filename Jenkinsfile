@@ -81,7 +81,7 @@ pipeline {
 
                 cat permission.txt |grep -o $USER
                 echo $?
-                ls
+                ls -la
                '''
             }
         }
