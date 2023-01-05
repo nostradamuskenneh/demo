@@ -10,7 +10,7 @@ pipeline {
     timestamps()
     }
       environment {
-		DOCKERHUB_CREDENTIALS=credentials('omar-dockerhub-credential-ID')
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub_oumar_ID')
 	}
     stages {
         
