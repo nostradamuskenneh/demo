@@ -82,6 +82,7 @@ pipeline {
                 cat permission.txt |grep -o $USER
                 echo $?
                 ls -la
+		cat /home/jenkins/.docker/config.json
                '''
             }
         }
@@ -145,7 +146,37 @@ pipeline {
                '''
             }
         }
+        stage('build-sandbox') {
+          when{ 
+          
+          expression {
+            env.Environment == 'sandbox' }
+          
+            }
+            steps {
+                sh '''
+                                cd UI
+                docker build -t oumarkenneh/oumar-ui:${BUILD_NUMBER}$UITag .
+                cd -
 
+                cd DB
+                docker build -t oumarkenneh/oumar-db:${BUILD_NUMBER}$DBTag .
+                cd -
+
+                cd auth
+                docker build -t oumarkenneh/oumar-auth:${BUILD_NUMBER}$AUTHTag .
+                cd -
+
+                cd weather
+                docker build -t oumarkenneh/oumar-weather:${BUILD_NUMBER}$WEATHERTag .
+                cd -
+                ls 
+                pwd
+                
+                '''
+            }
+        }
+	  
         stage('build-sandbox') {
           when{
           expression {
