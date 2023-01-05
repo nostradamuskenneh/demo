@@ -236,19 +236,11 @@ pipeline {
 
     }
 
-        //stage('metric-check') {
-			//steps {
-             //   echo 'unit test..'
-				//bat label: '', script: 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
-          //  }
 
-			
-       // }
    post {
    
    success {
       slackSend (channel: '#development-alerts', color: 'looking good', message: "SUCCESSFUL:  Branch name  <<${env.BRANCH_NAME}>>  Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-      cobertura autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0', onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false 
     }
  
     unstable {
