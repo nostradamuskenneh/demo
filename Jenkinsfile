@@ -140,8 +140,8 @@ pipeline {
         stage('login to dockerhub') {
             steps {
                sh '''
-               echo $credentials | docker login -u oumarkenneh --password-stdin
-	       echo $
+               echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u oumarkenneh --password-stdin
+	       echo $ DOCKERHUB_CREDENTIALS_PSW
 	       
                '''
             }
