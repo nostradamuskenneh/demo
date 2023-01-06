@@ -146,7 +146,7 @@ pipeline {
                '''
             }
         }
-        stage('oh-build-sandbox') {
+        stage('build-sandbox') {
           when{ 
           
           expression {
@@ -176,16 +176,7 @@ pipeline {
                 '''
             }
         }
-	  
-        stage('build-sandbox') {
-          when{
-          expression {
-            env.Environment == 'sandbox' }
-            }
-            steps {
-                echo 'Hello World'
-            }
-        }
+
         stage('build-pro') {
           when{ 
           
@@ -194,7 +185,27 @@ pipeline {
           
             }
             steps {
-                echo 'Hello World'
+              sh'''
+		                                cd UI
+                docker build -t oumarkenneh/oumar-ui:${BUILD_NUMBER}$UITag .
+                cd -
+
+                cd DB
+                docker build -t oumarkenneh/oumar-db:${BUILD_NUMBER}$DBTag .
+                cd -
+
+                cd auth
+                docker build -t oumarkenneh/oumar-auth:${BUILD_NUMBER}$AUTHTag .
+                cd -
+
+                cd weather
+                docker build -t oumarkenneh/oumar-weather:${BUILD_NUMBER}$WEATHERTag .
+                cd -
+                ls 
+                pwd
+		
+	       '''
+		    
             }
         }
         stage('push-to-dockerhub-dev') {
@@ -225,7 +236,7 @@ pipeline {
                '''
             }
         }
-        stage('push-to-dockerhub-pro') {
+        stage('push-to-dockerhub-prod') {
           when{
             expression {
               env.Environment == 'Prod' }
