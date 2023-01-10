@@ -6,20 +6,20 @@ replicaCount: 1
 
 image:
   db:
-     repository: devopseasylearning2021/s4-db
+     repository: oumarkenneh/oumar-db
      pullPolicy: IfNotPresent
      tag: "9f05"
 
   ui:
-     repository: devopseasylearning2021/s4-ui
+     repository: oumarkenneh/oumar-db
      pullPolicy: IfNotPresent
      tag: "9f05"
   auth:
-     repository: devopseasylearning2021/s4-auth
+     repository: oumarkenneh/oumar-db
      pullPolicy: IfNotPresent
      tag: "9f05"
   weather:
-     repository: devopseasylearning2021/s4-weather
+     repository: oumarkenneh/oumar-db
      pullPolicy: IfNotPresent
      tag: "9f05"
 imagePullSecrets: []
