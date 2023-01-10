@@ -1,16 +1,16 @@
 image:
   ui:
      repository: oumarkenneh/oumar-ui
-     tag: ""
+     tag: "$UITag"
 image:
   db:
      repository: oumarkenneh/oumar-db
-     tag: ""
+     tag: "$DBTag"
 image:
   auth:
      repository: oumarkenneh/oumar-auth
-     tag: ""
+     tag: "$AUTHag"
 image:
   weather:
      repository: oumarkenneh/oumar-weather
-     tag: ""
+     tag: "$WEATHERTag"
