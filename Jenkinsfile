@@ -269,7 +269,7 @@ pipeline {
     image :
       db: 
         repository: oumarkenneh/oumar-db
-	tag: $DBTag
+	tag: "$DBTag"
   
       ui: 
         repository: oumarkenneh/oumar-ui
@@ -277,11 +277,11 @@ pipeline {
 	
       db: 
         repository: oumarkenneh/oumar-auth
-	tag: $AUTHTag
+	tag: "$AUTHTag"
 	
       db: 
         repository: oumarkenneh/oumar-weather
-	tag: WEATHERTag
+	tag: "$WEATHERTag"
 	
    EOF
    
@@ -289,19 +289,19 @@ pipeline {
     image :
       db: 
         repository: oumarkenneh/oumar-db
-	tag: $DBTag
+	tag: "$DBTag"
   
       ui: 
         repository: oumarkenneh/oumar-ui
-	tag: $UITag 
+	tag: "$UITag" 
 	
       db: 
         repository: oumarkenneh/oumar-auth
-	tag: $AUTHTag
+	tag: "$AUTHTag"
 	
       db: 
         repository: oumarkenneh/oumar-weather
-	tag: WEATHERTag
+	tag: "$WEATHERTag"
 	
    EOF
    
@@ -309,19 +309,19 @@ pipeline {
     image :
       db: 
         repository: oumarkenneh/oumar-db
-	tag: $DBTag
+	tag: "$DBTag"
   
       ui: 
         repository: oumarkenneh/oumar-ui
-	tag: $UITag 
+	tag: "$UITag" 
 	
       db: 
         repository: oumarkenneh/oumar-auth
-	tag: $AUTHTag
+	tag: "$AUTHTag"
 	
       db: 
         repository: oumarkenneh/oumar-weather
-	tag: WEATHERTag
+	tag: "$WEATHERTag"
 	
    EOF
    
