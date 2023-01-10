@@ -342,7 +342,7 @@ EOF
         stage('git push') {
             steps {
                 sh '''
-		git branch develop-oumar
+		git checkout develop-oumar
 		git add -A
 		git commit -m "helm update"
 		git push https://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@github.com/nostradamuskenneh/demo.git
