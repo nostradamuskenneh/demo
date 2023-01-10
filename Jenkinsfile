@@ -330,7 +330,7 @@ pipeline {
         }
         stage('update helm charts-sanbox') {
             steps {
-                
+                echo "hello World"
             }
         }
         stage('update helm charts-pro') {
