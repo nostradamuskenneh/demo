@@ -11,7 +11,7 @@ pipeline {
     }
       environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub_oumar_ID')
-	        oumar-token@github.com=credentials('oumar-token-ID')
+	        oumar-token-ID=credentials('oumar-token-ID')
 	     
 	        
 	}
