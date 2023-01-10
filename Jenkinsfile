@@ -11,7 +11,7 @@ pipeline {
     }
       environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub_oumar_ID')
-	        DBTag=DBTag
+	        
 	}
     stages {
         
@@ -330,7 +330,7 @@ pipeline {
         }
         stage('update helm charts-sanbox') {
             steps {
-                echo $DBTag
+                
             }
         }
         stage('update helm charts-pro') {
