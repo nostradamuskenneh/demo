@@ -11,6 +11,7 @@ pipeline {
     }
       environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub_oumar_ID')
+	        DBTag=$DBTag
 	}
     stages {
         
