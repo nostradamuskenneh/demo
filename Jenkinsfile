@@ -345,7 +345,7 @@ EOF
 		
 		git add -A
 		git commit -m "helm update"
-		git push git clone https://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@github.com/nostradamuskenneh/demo.git
+		git push https://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@github.com/nostradamuskenneh/demo.git
 		'''
             }
         }
