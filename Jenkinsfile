@@ -324,7 +324,7 @@ pipeline {
 	tag: "${BUILD_NUMBER}"
 	
    EOF
-   
+       ls
 		'''
             }
         }
