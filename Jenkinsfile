@@ -341,17 +341,17 @@ EOF
 		'''
             }
         }
-        stage('git push') {
-            steps {
+       # stage('git push') {
+      #      steps {
                 sh '''
-		cd demo
-		git checkout develop-oumar
-		git add -A
-		git commit -m "helm update"
-		git push https://oumar-token-ID@github.com/nostradamus/demo.git
-		'''
-            }
-        }
+	#	cd demo
+	#	git checkout develop-oumar
+	#	git add -A
+	#	git commit -m "helm update"
+	#	git push https://oumar-token-ID@github.com/nostradamus/demo.git
+	#	'''
+         #   }
+       # }
 	    
         stage('wait for argocd') {
             steps {
