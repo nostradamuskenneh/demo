@@ -257,7 +257,7 @@ pipeline {
 		pwd
 
 		rm -rf demo
-		git clone https://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@github.com/nostradamuskenneh/demo.git
+		git clone https://oumar-token@github.com/nostradamus/demo.git
 		cd demo/CHARTS
 		 DBTag=${BUILD_NUMBER}
 		 UITag=${BUILD_NUMBER}
@@ -346,7 +346,7 @@ EOF
 		git checkout develop-oumar
 		git add -A
 		git commit -m "helm update"
-		git push https://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@github.com/nostradamuskenneh/demo.git
+		git push https://oumar-token@github.com/nostradamus/demo.git
 		'''
             }
         }
