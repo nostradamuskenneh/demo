@@ -11,6 +11,8 @@ pipeline {
     }
       environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub_oumar_ID')
+	        oumar-token@github.com=credentials('dockerhub_oumar_ID')
+	     
 	        
 	}
     stages {
