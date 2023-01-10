@@ -252,7 +252,74 @@ pipeline {
         }
         stage('update helm charts-dev') {
             steps {
-                echo 'Hello World'
+                sh '''
+		git clone https://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@github.com/nostradamuskenneh/demo.git
+		cd demo/CHARTS
+		DBTag=DBTag
+		UITag=DBTag
+		AUTHTag=AUTHTag
+		git config --global user.email "kenneho@yahoo.com"
+		git config --global user.name "oumarkenneh"
+   cat <<EOF > dev-values.yaml
+    image :
+      db: 
+        repository: oumarkenneh/oumar-db
+	tag: $DBTag
+  
+      ui: 
+        repository: oumarkenneh/oumar-ui
+	tag: $UITag 
+	
+      db: 
+        repository: oumarkenneh/oumar-auth
+	tag: $AUTHTag
+	
+      db: 
+        repository: oumarkenneh/oumar-weather
+	tag: WEATHERTag
+	
+   EOF
+   
+   cat <<EOF > dev-values.yaml
+    image :
+      db: 
+        repository: oumarkenneh/oumar-db
+	tag: $DBTag
+  
+      ui: 
+        repository: oumarkenneh/oumar-ui
+	tag: $UITag 
+	
+      db: 
+        repository: oumarkenneh/oumar-auth
+	tag: $AUTHTag
+	
+      db: 
+        repository: oumarkenneh/oumar-weather
+	tag: WEATHERTag
+	
+   EOF
+   
+   cat <<EOF > pro-values.yaml
+    image :
+      db: 
+        repository: oumarkenneh/oumar-db
+	tag: $DBTag
+  
+      ui: 
+        repository: oumarkenneh/oumar-ui
+	tag: $UITag 
+	
+      db: 
+        repository: oumarkenneh/oumar-auth
+	tag: $AUTHTag
+	
+      db: 
+        repository: oumarkenneh/oumar-weather
+	tag: WEATHERTag
+	
+   EOF
+		'''
             }
         }
         stage('update helm charts-sanbox') {
