@@ -324,13 +324,16 @@ pipeline {
 	tag: "${BUILD_NUMBER}"
 	
    EOF
-       ls
+       
 		'''
             }
         }
         stage('update helm charts-sanbox') {
             steps {
+	       sh '''
                 echo "hello World"
+		ls
+	       '''
             }
         }
         stage('update helm charts-pro') {
