@@ -332,7 +332,7 @@ pipeline {
             steps {
 	       sh '''
                 echo "hello World"
-		ls
+		ls -ltr
 	       '''
             }
         }
