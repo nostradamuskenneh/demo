@@ -255,6 +255,7 @@ pipeline {
             steps {
                 sh '''
 		pwd
+
 		rm -rf demo
 		git clone https://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@github.com/nostradamuskenneh/demo.git
 		cd demo/CHARTS
@@ -282,9 +283,16 @@ cat <<EOF > dev-values.yaml
       db: 
         repository: oumarkenneh/oumar-weather
 	tag: "${BUILD_NUMBER}"
-EOF
-   
-cat <<EOF > dev-values.yaml
+EOF   
+		'''
+            }
+        }
+        stage('update helm charts-sanbox') {
+            steps {
+	       sh '''
+                echo "hello World"
+		ls -ltr
+cat <<EOF > sandbox-values.yaml
     image :
       db: 
         repository: oumarkenneh/oumar-db
@@ -303,7 +311,12 @@ cat <<EOF > dev-values.yaml
 	tag: "${BUILD_NUMBER}"
 	
 EOF
-   
+	       '''
+            }
+        }
+        stage('update helm charts-pro') {
+            steps {
+                sh '''
 cat <<EOF > pro-values.yaml
     image :
       db: 
@@ -323,23 +336,20 @@ cat <<EOF > pro-values.yaml
 	tag: "${BUILD_NUMBER}"
 	
 EOF
-       
 		'''
             }
         }
-        stage('update helm charts-sanbox') {
+        stage('git push') {
             steps {
-	       sh '''
-                echo "hello World"
-		ls -ltr
-	       '''
+                sh '''
+		
+		git add -A
+		git commit -m "helm update"
+		git push git clone https://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@github.com/nostradamuskenneh/demo.git
+		'''
             }
         }
-        stage('update helm charts-pro') {
-            steps {
-                echo 'Hello World'
-            }
-        }
+	    
         stage('wait for argocd') {
             steps {
                 echo 'Hello World'
