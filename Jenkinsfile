@@ -265,7 +265,7 @@ pipeline {
 		
 		git config --global user.email "kenneho@yahoo.com"
 		git config --global user.name "oumarkenneh"
-   cat <<EOF > dev-values.yaml
+cat <<EOF > dev-values.yaml
     image :
       db: 
         repository: oumarkenneh/oumar-db
@@ -282,10 +282,9 @@ pipeline {
       db: 
         repository: oumarkenneh/oumar-weather
 	tag: "${BUILD_NUMBER}"
-	
-   EOF
+EOF
    
-   cat <<EOF > dev-values.yaml
+cat <<EOF > dev-values.yaml
     image :
       db: 
         repository: oumarkenneh/oumar-db
@@ -303,9 +302,9 @@ pipeline {
         repository: oumarkenneh/oumar-weather
 	tag: "${BUILD_NUMBER}"
 	
-   EOF
+EOF
    
-   cat <<EOF > pro-values.yaml
+cat <<EOF > pro-values.yaml
     image :
       db: 
         repository: oumarkenneh/oumar-db
@@ -323,7 +322,7 @@ pipeline {
         repository: oumarkenneh/oumar-weather
 	tag: "${BUILD_NUMBER}"
 	
-   EOF
+EOF
        
 		'''
             }
