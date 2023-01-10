@@ -11,7 +11,7 @@ pipeline {
     }
       environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub_oumar_ID')
-	        oumar-token@github.com=credentials('oumar-token@github.com')
+	        oumar-token@github.com=credentials('oumar-token-ID')
 	     
 	        
 	}
@@ -259,7 +259,7 @@ pipeline {
 		pwd
 
 		rm -rf demo
-		git clone https://oumar-token@github.com/nostradamus/demo.git
+		git clone https://oumar-token-ID@github.com/nostradamus/demo.git
 		cd demo/CHARTS
 		 DBTag=${BUILD_NUMBER}
 		 UITag=${BUILD_NUMBER}
@@ -348,7 +348,7 @@ EOF
 		git checkout develop-oumar
 		git add -A
 		git commit -m "helm update"
-		git push https://oumar-token@github.com/nostradamus/demo.git
+		git push https://oumar-token-ID@github.com/nostradamus/demo.git
 		'''
             }
         }
