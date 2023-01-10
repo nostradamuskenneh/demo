@@ -269,19 +269,19 @@ pipeline {
     image :
       db: 
         repository: oumarkenneh/oumar-db
-	tag: "$DBTag"
+	tag: "${BUILD_NUMBER}"
   
       ui: 
         repository: oumarkenneh/oumar-ui
-	tag: $UITag 
+	tag: "${BUILD_NUMBER}" 
 	
       db: 
         repository: oumarkenneh/oumar-auth
-	tag: "$AUTHTag"
+	tag: "${BUILD_NUMBER}"
 	
       db: 
         repository: oumarkenneh/oumar-weather
-	tag: "$WEATHERTag"
+	tag: "${BUILD_NUMBER}"
 	
    EOF
    
@@ -289,19 +289,19 @@ pipeline {
     image :
       db: 
         repository: oumarkenneh/oumar-db
-	tag: "$DBTag"
+	tag: "${BUILD_NUMBER}"
   
       ui: 
         repository: oumarkenneh/oumar-ui
-	tag: "$UITag" 
+	tag: "${BUILD_NUMBER}" 
 	
       db: 
         repository: oumarkenneh/oumar-auth
-	tag: "$AUTHTag"
+	tag: "${BUILD_NUMBER}"
 	
       db: 
         repository: oumarkenneh/oumar-weather
-	tag: "$WEATHERTag"
+	tag: "${BUILD_NUMBER}"
 	
    EOF
    
@@ -309,19 +309,19 @@ pipeline {
     image :
       db: 
         repository: oumarkenneh/oumar-db
-	tag: "$DBTag"
+	tag: "${BUILD_NUMBER}"
   
       ui: 
         repository: oumarkenneh/oumar-ui
-	tag: "$UITag" 
+	tag: "${BUILD_NUMBER}" 
 	
       db: 
         repository: oumarkenneh/oumar-auth
-	tag: "$AUTHTag"
+	tag: "${BUILD_NUMBER}"
 	
       db: 
         repository: oumarkenneh/oumar-weather
-	tag: "$WEATHERTag"
+	tag: "${BUILD_NUMBER}"
 	
    EOF
    
