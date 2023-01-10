@@ -258,10 +258,10 @@ pipeline {
 		rm -rf demo
 		git clone https://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@github.com/nostradamuskenneh/demo.git
 		cd demo/CHARTS
-		DBTag=$DBTag
-		UITag=$DBTag
-		AUTHTag=$AUTHTag
-		WEATHERTag=$WEATHERTag
+		DBTag=${BUILD_NUMBER}
+		UITag=${BUILD_NUMBER}
+		AUTHTag=${BUILD_NUMBER}
+		WEATHERTag=${BUILD_NUMBER}
 		
 		git config --global user.email "kenneho@yahoo.com"
 		git config --global user.name "oumarkenneh"
