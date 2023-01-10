@@ -253,7 +253,8 @@ pipeline {
         stage('update helm charts-dev') {
             steps {
                 sh '''
-		pwde
+		pwd
+		rm -rf demo
 		git clone https://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@github.com/nostradamuskenneh/demo.git
 		cd demo/CHARTS
 		DBTag=$DBTag
