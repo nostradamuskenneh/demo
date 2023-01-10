@@ -323,12 +323,13 @@ pipeline {
 	tag: WEATHERTag
 	
    EOF
+   
 		'''
             }
         }
         stage('update helm charts-sanbox') {
             steps {
-                echo 'Hello World'
+                echo $DBTag
             }
         }
         stage('update helm charts-pro') {
