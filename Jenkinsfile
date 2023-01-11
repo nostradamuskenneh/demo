@@ -12,8 +12,7 @@ pipeline {
       environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub_oumar_ID')
 	        gitCredentialId = 'oumar-token-ID'
-                gitUrl = 'https://github.com/nostradamuskenneh/demo.git'
-                deployBranch = 'develop-oumar'
+            
 	     
 	        
 	}
